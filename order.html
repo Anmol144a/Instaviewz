@@ -1,31 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order - InstaViewz</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instaviewz - Order</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="InstaViewz Logo" />
-      <h1>InstaViewz</h1>
-    </div>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-    <nav id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="order.html" class="active">Order</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header class="animate-slide-down">
+        <div class="container">
+            <img src="images/logo.png" alt="Instaviewz Logo" class="logo animate-scale">
+            <div class="search-bar animate-glow">
+                <input type="text" placeholder="Search services...">
+            </div>
+            <div class="nav-icons">
+                <a href="index.html" class="animate-scale"><i class="fas fa-home"></i></a>
+                <a href="order.html" class="animate-scale"><i class="fas fa-shopping-cart"></i></a>
+                <a href="pricing.html" class="animate-scale"><i class="fas fa-tags"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-comment-alt"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-plus-square"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-compass"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </header>
 
-  <section class="content fade-in">
-    <h2>Order Now</h2>
-    <p>Click the button below to order directly via Instagram DM 📩</p>
-    <a href="https://www.instagram.com/_anmolzz/" class="btn" target="_blank">DM to Order</a>
-  </section>
+    <main>
+        <div class="main-content">
+            <div class="stories">
+                <div class="story animate-fade" data-delay="0s">
+                    <img src="images/profile1.jpg" alt="Profile" class="animate-scale">
+                    <p>Your Story</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.1s">
+                    <img src="images/profile2.jpg" alt="Profile" class="animate-scale">
+                    <p>john_doe</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.2s">
+                    <img src="images/profile3.jpg" alt="Profile" class="animate-scale">
+                    <p>jane_smith</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.3s">
+                    <img src="images/profile4.jpg" alt="Profile" class="animate-scale">
+                    <p>alex_123</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.4s">
+                    <img src="images/profile5.jpg" alt="Profile" class="animate-scale">
+                    <p>sara_lee</p>
+                </div>
+            </div>
+
+            <div class="posts">
+                <div class="post animate-fade" data-delay="0s">
+                    <div class="post-header">
+                        <img src="images/profile1.jpg" alt="Service" class="animate-scale">
+                        <h3>Instagram Likes</h3>
+                    </div>
+                    <img src="images/post1.jpg" alt="Service" class="animate-brighten">
+                    <div class="post-actions">
+                        <button class="order-btn animate-pulse" data-id="1">Order Now</button>
+                        <span>Instant Delivery</span>
+                    </div>
+                    <p>Boost your posts with 1,000 likes for $5.99!</p>
+                </div>
+                <div class="post animate-fade" data-delay="0.2s">
+                    <div class="post-header">
+                        <img src="images/profile2.jpg" alt="Service" class="animate-scale">
+                        <h3>YouTube Subscribers</h3>
+                    </div>
+                    <img src="images/post2.jpg" alt="Service" class="animate-brighten">
+                    <div class="post-actions">
+                        <button class="order-btn animate-pulse" data-id="2">Order Now</button>
+                        <span>High Quality</span>
+                    </div>
+                    <p>Get 500 subscribers for $19.99!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
