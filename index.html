@@ -1,37 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InstaViewz Shop</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instaviewz - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="InstaViewz Logo" />
-      <h1>InstaViewz</h1>
-    </div>
+    <header class="animate-slide-down">
+        <div class="container">
+            <img src="images/logo.png" alt="Instaviewz Logo" class="logo animate-scale">
+            <div class="search-bar animate-glow">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="nav-icons">
+                <a href="index.html" class="animate-scale"><i class="fas fa-home"></i></a>
+                <a href="order.html" class="animate-scale"><i class="fas fa-shopping-cart"></i></a>
+                <a href="pricing.html" class="animate-scale"><i class="fas fa-tags"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-comment-alt"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-plus-square"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-compass"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Hamburger -->
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
+    <main>
+        <div class="main-content">
+            <div class="stories">
+                <div class="story animate-fade" data-delay="0s">
+                    <img src="images/profile1.jpg" alt="Profile" class="animate-scale">
+                    <p>Your Story</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.1s">
+                    <img src="images/profile2.jpg" alt="Profile" class="animate-scale">
+                    <p>john_doe</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.2s">
+                    <img src="images/profile3.jpg" alt="Profile" class
 
-    <!-- Nav -->
-    <nav id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="order.html">Order</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+System: I'm sorry, it looks like the response got cut off. Let me complete the rebuild of your Instaviewz website with the three pages (**Home**, **Order**, and **Pricing**), focusing on updating the theme with a modern, polished look inspired by [falconsmmpanel.com](https://falconsmmpanel.com/), removing the user profile and follow sections (sidebar), and providing a textual preview of each page. I’ll include the full code for `index.html` (Home), `order.html`, `pricing.html`, `style.css`, and `script.js`, ensuring animations and a cohesive theme across all pages. Since you requested a "preview here," I’ll provide a detailed description of each page’s appearance and behavior.
 
-  <section class="hero fade-in">
-    <h2>Boost Your Instagram Views 🚀</h2>
-    <p>Best quality Instagram views delivered instantly. Safe & reliable.</p>
-    <a href="order.html" class="btn">Order Now</a>
-  </section>
+### Rebuild Goals
+- **Core Concept**: Maintain the Instagram-like social feed (header with logo/search/nav, stories, posts with like buttons) across all pages, removing the sidebar (`<aside>` with profile and suggestions).
+- **Three Pages**:
+  - **Home**: Social feed with stories and posts, updated with a modern theme.
+  - **Order**: Posts styled as orderable services (e.g., Instagram likes).
+  - **Pricing**: Pricing tiers as cards, styled like posts.
+- **Theme Updates**: Clean, vibrant design (light blue-gray background, white cards, blue accents, smooth animations) inspired by falconsmmpanel.com.
+- **Animations**: Fade-ins, slide-ins, hover scales, and button pulses.
+- **Preview**: Textual description of layout, colors, and animations for each page.
+- **Assets**: Reuse existing images (`logo.png`, `profile1.jpg`, etc.).
+
+### Textual Preview of the Rebuilt Website
+
+#### Home Page (`index.html`)
+- **Layout**: Centered 1200px-wide layout with a light blue-gray background (`#F5F7FB`). Full-width main feed (no sidebar) with header, stories, and posts. Stacks vertically on mobile.
+- **Header**: Sticky, white card (`border-radius: 12px`) with logo (left), rounded search bar (center), and blue nav icons (right: home, order, pricing, messenger, post, explore, heart). Slides down on load (`0.5s`). Icons scale up (1.2x) on hover.
+- **Stories**: Horizontal scrollable row of circular profile images (70x70px) with gradient borders (`#3B82F6` to `#EC4899`). Stories fade in sequentially (`0.1s` delay) and scale up (1.1x) on hover.
+- **Posts**: White cards with shadows, showing profile picture, username, post image, like button (heart), like count, and caption. Posts fade in with an upward slide, staggered (`0.2s` delay). Like buttons pulse (scale 1.5x) on click, turning red (`#EF4444`). Images brighten on hover.
+- **Behavior**: Like buttons toggle with a pulse animation. Nav icons and stories scale on hover. Search bar glows on hover (non-functional).
+
+#### Order Page (`order.html`)
+- **Layout**: Identical to Home (main feed, no sidebar), but posts represent services (e.g., Instagram likes, YouTube subscribers).
+- **Header & Stories**: Same as Home for consistency.
+- **Posts**: Styled as services with a placeholder image, service name, description, and "Order Now" button (replacing like button). Posts fade in, buttons pulse on click (turn blue, `#1D4ED8`).
+- **Behavior**: "Order Now" buttons toggle an "Added" state. Stories and nav icons scale on hover.
+
+#### Pricing Page (`pricing.html`)
+- **Layout**: Main feed with pricing tiers as cards, no sidebar.
+- **Header & Stories**: Same as Home.
+- **Pricing Tiers**: Three cards (Basic, Pro, Premium) with title, price, features, and "Choose Plan" button. Cards fade in with a stagger, scale on hover, and buttons pulse on click (blue when selected).
+- **Behavior**: "Choose Plan" buttons toggle a selected state. Nav icons and stories scale on hover.
+
+#### Theme Details
+- **Colors**: Background (`#F5F7FB`), white cards (`#FFFFFF`), blue accents (`#1D4ED8`, `#3B82F6`), red for liked (`#EF4444`), story gradient (`#3B82F6` to `#EC4899`).
+- **Animations**:
+  - Slide-down (header), fade-in (stories, posts, pricing cards).
+  - Hover: Scale (1.1x) for images/links, brighten for post images.
+  - Click: Pulse (1.5x) for like/order/choose buttons.
+- **Responsive**: Stacks vertically on ≤768px, with full-width search bar and smaller icons.
+
+### Updated Code
+
+#### `index.html` (Home Page)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instaviewz - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="animate-slide-down">
+        <div class="container">
+            <img src="images/logo.png" alt="Instaviewz Logo" class="logo animate-scale">
+            <div class="search-bar animate-glow">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="nav-icons">
+                <a href="index.html" class="animate-scale"><i class="fas fa-home"></i></a>
+                <a href="order.html" class="animate-scale"><i class="fas fa-shopping-cart"></i></a>
+                <a href="pricing.html" class="animate-scale"><i class="fas fa-tags"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-comment-alt"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-plus-square"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-compass"></i></a>
+                <a href="#" class="animate-scale"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <div class="stories">
+                <div class="story animate-fade" data-delay="0s">
+                    <img src="images/profile1.jpg" alt="Profile" class="animate-scale">
+                    <p>Your Story</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.1s">
+                    <img src="images/profile2.jpg" alt="Profile" class="animate-scale">
+                    <p>john_doe</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.2s">
+                    <img src="images/profile3.jpg" alt="Profile" class="animate-scale">
+                    <p>jane_smith</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.3s">
+                    <img src="images/profile4.jpg" alt="Profile" class="animate-scale">
+                    <p>alex_123</p>
+                </div>
+                <div class="story animate-fade" data-delay="0.4s">
+                    <img src="images/profile5.jpg" alt="Profile" class="animate-scale">
+                    <p>sara_lee</p>
+                </div>
+            </div>
+
+            <div class="posts">
+                <div class="post animate-fade" data-delay="0s">
+                    <div class="post-header">
+                        <img src="images/profile1.jpg" alt="Profile" class="animate-scale">
+                        <h3>john_doe</h3>
+                    </div>
+                    <img src="images/post1.jpg" alt="Post" class="animate-brighten">
+                    <div class="post-actions">
+                        <i class="fas fa-heart like-btn animate-pulse" data-id="1"></i>
+                        <span>1,234 likes</span>
+                    </div>
+                    <p>Great day at the beach! 🌊 #SummerVibes</p>
+                </div>
+                <div class="post animate-fade" data-delay="0.2s">
+                    <div class="post-header">
+                        <img src="images/profile2.jpg" alt="Profile" class="animate-scale">
+                        <h3>jane_smith</h3>
+                    </div>
+                    <img src="images/post2.jpg" alt="Post" class="animate-brighten">
+                    <div class="post-actions">
+                        <i class="fas fa-heart like-btn animate-pulse" data-id="2"></i>
+                        <span>567 likes</span>
+                    </div>
+                    <p>Exploring the city! 🏙️ #Adventure</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
-</html>
+      </html></html>
