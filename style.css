@@ -7,11 +7,11 @@
 }
 
 body {
-    background: #F5F7FB; /* Light blue-gray */
+    background: #F0F2F5; /* Soft gray */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    color: #1F2937;
+    color: #2D3436;
 }
 
 /* Animations */
@@ -25,10 +25,9 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.5); }
-    100% { transform: scale(1.2); }
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .animate-slide-down {
@@ -40,21 +39,24 @@ body {
     animation-delay: attr(data-delay, 0s);
 }
 
+.animate-fade-in {
+    animation: fadeInScale 0.6s ease-out;
+}
+
 .animate-scale {
     transition: transform 0.3s ease;
 }
 
 .animate-scale:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .animate-glow {
-    transition: box-shadow 0.3s, background 0.3s;
+    transition: box-shadow 0.3s;
 }
 
 .animate-glow:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background: #FFFFFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .animate-brighten {
@@ -62,19 +64,19 @@ body {
 }
 
 .animate-brighten:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.05);
 }
 
 .animate-pulse.active {
-    animation: pulse 0.3s ease;
+    animation: fadeInScale 0.3s ease;
 }
 
 /* Header */
 header {
     background: #FFFFFF;
     padding: 15px 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +99,7 @@ header {
     flex: 1;
     max-width: 400px;
     margin: 0 20px;
-    background: #E9ECEF;
+    background: #F8FAFC;
     border-radius: 20px;
     padding: 10px 15px;
 }
@@ -108,15 +110,15 @@ header {
     outline: none;
     width: 100%;
     font-size: 16px;
-    color: #1F2937;
+    color: #2D3436;
 }
 
 .search-bar input::placeholder {
-    color: #6B7280;
+    color: #A3BFFA;
 }
 
 .nav-icons a {
-    color: #1D4ED8;
+    color: #4A90E2;
     font-size: 22px;
     margin-left: 20px;
 }
@@ -128,6 +130,26 @@ main {
 
 .main-content {
     width: 100%;
+}
+
+.introduction {
+    background: #FFFFFF;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.introduction h1 {
+    font-size: 28px;
+    color: #2D3436;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    font-size: 16px;
+    color: #636E72;
 }
 
 .stories {
@@ -151,21 +173,21 @@ main {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 3px solid transparent;
-    background: linear-gradient(to right, #3B82F6, #EC4899);
-    padding: 3px;
+    border: 2px solid #D3D8E0;
+    padding: 2px;
 }
 
 .story p {
     font-size: 12px;
     margin-top: 5px;
+    color: #2D3436;
 }
 
 .post, .pricing-card {
     background: #FFFFFF;
-    border-radius: 12px;
+    border-radius: 8px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
 
@@ -193,46 +215,11 @@ main {
     display: block;
 }
 
-.post-actions {
-    padding: 10px 15px;
-    display: flex;
-    gap: 15px;
-}
-
-.post-actions .like-btn, .post-actions .order-btn, .pricing-card .choose-btn {
-    font-size: 22px;
-    color: #6B7280;
-    cursor: pointer;
-    border: none;
-    background: none;
-    padding: 5px;
-}
-
-.post-actions .like-btn.active {
-    color: #EF4444;
-}
-
-.post-actions .order-btn, .pricing-card .choose-btn {
-    background: #1D4ED8;
-    color: #FFFFFF;
-    border-radius: 8px;
-    font-size: 14px;
-    padding: 8px 16px;
-}
-
-.post-actions .order-btn.active, .pricing-card .choose-btn.active {
-    background: #3B82F6;
-}
-
-.post-actions span {
-    font-size: 14px;
-    color: #6B7280;
-}
-
-.post p, .pricing-card p {
+.post p {
     padding: 0 15px 15px;
     font-size: 14px;
     line-height: 1.5;
+    color: #636E72;
 }
 
 .pricing {
@@ -254,11 +241,12 @@ main {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
+    color: #2D3436;
 }
 
 .pricing-card .price {
     font-size: 24px;
-    color: #1D4ED8;
+    color: #4A90E2;
     margin-bottom: 15px;
 }
 
@@ -270,6 +258,21 @@ main {
 .pricing-card ul li {
     font-size: 14px;
     margin-bottom: 8px;
+    color: #636E72;
+}
+
+.pricing-card .choose-btn {
+    background: #4A90E2;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.pricing-card .choose-btn.active {
+    background: #6FCF97;
 }
 
 /* Responsive Design */
