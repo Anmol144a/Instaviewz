@@ -1,40 +1,140 @@
-body {
-  background: #fafafa;
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Header */
-header {
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+body {
+  background: linear-gradient(135deg, #1e1e2f, #232344, #2a2a60);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
-header .logo {
+.navbar .logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-header .logo h1 {
-  font-size: 20px;
-  color: #e1306c;
+
+.navbar img {
+  height: 40px;
+  border-radius: 50%;
 }
 
-/* Navigation */
-nav {
+.navbar ul {
+  list-style: none;
   display: flex;
   gap: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: 0.3s ease;
 }
-nav a {
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #ff00cc;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .navbar ul.active {
+    display: flex;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff00cc;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
